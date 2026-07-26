@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { Label } from "../ui/label";
+import { useAuth } from "@/hooks/useAuth";
 
 export function SignupForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { setUser } = useAuth();
 
   async function handleSubmit(data: React.FormEvent) {
     data.preventDefault();
@@ -34,6 +36,11 @@ export function SignupForm() {
         throw new Error(result.error || "Signup failed");
       }
       console.log("Signup successful!");
+      const meRes = await fetch("/api/me");
+      if (meRes.ok) {
+        const meData = await meRes.json();
+        setUser(meData);
+      }
       router.push("/");
     } catch (error) {
       console.error(error);

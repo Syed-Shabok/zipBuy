@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { setUser } = useAuth();
 
   async function loginUser(emailVal: string, passwordVal: string) {
     try {
@@ -28,6 +30,11 @@ export function LoginForm() {
       const result = await res.json();
 
       if (res.ok) {
+        const meRes = await fetch("/api/me");
+        if (meRes.ok) {
+          const meData = await meRes.json();
+          setUser(meData);
+        }
         router.push("/");
       } else {
         console.error(result.error);
