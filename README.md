@@ -1,47 +1,42 @@
-# 🛍️ NextMart
+# 🛍️ ZipBuy
 
-A modern, beginner-friendly e-commerce application built with **Next.js 15**, **TypeScript**, **MongoDB**, and **Next.js API Routes**. This project demonstrates how to build a full-stack application using the App Router, secure authentication, protected routes, and CRUD operations while following a clean and scalable architecture.
+A modern, production-ready full-stack e-commerce application built with **Next.js 15**, **TypeScript**, **MongoDB**, and **Tailwind CSS**. This project demonstrates clean architecture, secure Role-Based Access Control (RBAC) authentication, advanced product filtering, and a strict 3-color custom design system utilizing Base UI and Recharts.
 
 ---
 
 ## 🚀 Features
 
-- ⚡ Next.js 15 App Router
-- 🔷 TypeScript
-- 🎨 Tailwind CSS
-- 🧩 shadcn/ui Components
-- 🗄️ MongoDB (Native Driver)
-- 🔌 Next.js API Routes
-- 🔐 JWT Authentication
-- 🍪 HTTP-only Cookie Authentication
-- 🛡️ Protected Routes using Middleware
-- 📦 Product CRUD API
-- 🛒 Product Listing
-- 📄 Product Details
-- ➕ Create Product (Protected)
-- ✏️ Manage Products (Protected)
-- 📱 Fully Responsive Design
-- 📂 Clean Folder Structure
+- ⚡ **Next.js 15 App Router** for optimized server/client rendering
+- 🎨 **Strict 3-Color UI Design System** with custom Tailwind variables
+- 📊 **Interactive Data Visualization** using Recharts
+- 🗄️ **MongoDB (Native Driver)** for scalable data management
+- 🔐 **JWT Authentication & HTTP-only Cookies**
+- 🛡️ **Role-Based Access Control (RBAC)** via Next.js Proxy/Middleware
+- 🔍 **Advanced Explore Page** (Search, Category Filtering, Price Sorting, Pagination)
+- 📦 **Complete Product CRUD APIs**
+- 🛒 **Dynamic Product Details & Listing Pages**
+- ➕ **Admin-Only Dashboards** (Create & Manage Products)
+- 📱 **Fully Responsive Layouts** for mobile, tablet, and desktop
+- 📝 **7-Section Landing Page** with animations and FAQ accordions
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-
 - Next.js 15
-- React
+- React 19
 - TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Lucide React
+- Tailwind CSS v4
+- Base UI / shadcn components
+- Recharts (Data Visualization)
+- Material Symbols Outlined (Icons)
 
 ### Backend
-
 - Next.js API Routes
 - MongoDB Native Driver
-- JWT
-- bcryptjs
+- JSON Web Tokens (JWT)
+- bcrypt (Password Hashing)
 
 ---
 
@@ -55,188 +50,147 @@ src
 │   │   ├── login
 │   │   ├── logout
 │   │   ├── me
+│   │   ├── seed          # Database auto-population route
 │   │   └── products
 │   │       └── [id]
 │   │
 │   ├── products
-│   │   ├── create
-│   │   ├── manage
+│   │   ├── create        # Admin protected
+│   │   ├── manage        # Admin protected
 │   │   └── [id]
 │   │
 │   ├── login
 │   ├── signup
-│   └── about
+│   ├── about
+│   ├── contact
+│   └── privacy
 │
 ├── components
+│   ├── forms
+│   ├── pages
+│   │   └── home          # 7 landing page sections
+│   ├── shared
+│   └── ui                # Reusable Base UI components
 │
 ├── providers
 │   └── AuthProvider.tsx
 │
 ├── hooks
-│   └── useAuth.ts
+│   ├── useAuth.ts
+│   └── use-mobile.ts
 │
 ├── lib
-│   └── mongoConnect.ts
+│   ├── mongoConnect.ts
+│   └── utils.ts
 │
 ├── types
 │
-└── middleware.ts
+└── proxy.ts              # Next.js Middleware for Route Protection
 ```
 
 ---
 
-## 🔐 Authentication
+## 🔐 Authentication & Authorization
 
-Authentication is implemented using:
+Authentication is implemented using JWT, HTTP-only Cookies, and bcrypt password hashing. Route protection and RBAC are handled using Next.js `proxy.ts`.
 
-- JWT
-- HTTP-only Cookies
-- bcrypt Password Hashing
-- Protected Routes with Next.js Middleware
-
-Authentication flow:
+**Authentication Flow:**
 
 ```text
-User Login
+User Login / Demo Login
       │
       ▼
-API Route (/api/login)
+API Route (/api/login) -> Verify Credentials
       │
       ▼
-Verify Credentials
-      │
-      ▼
-Generate JWT
+Generate JWT (Includes User Role)
       │
       ▼
 Store HTTP-only Cookie
       │
       ▼
-Protected Pages & APIs
+Protected Pages & APIs Check Role (Admin vs User)
 ```
 
 ---
 
-## 📦 Product APIs
+## 📦 API Endpoints
 
-| Method | Endpoint            | Description        |
-| ------ | ------------------- | ------------------ |
-| GET    | `/api/products`     | Get all products   |
-| GET    | `/api/products/:id` | Get single product |
-| POST   | `/api/products`     | Create product     |
-| PUT    | `/api/products/:id` | Update product     |
-| DELETE | `/api/products/:id` | Delete product     |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get all products (supports filters & pages) |
+| GET | `/api/products/:id` | Get a single product by ID |
+| POST | `/api/products` | Create a new product (Admin) |
+| PUT | `/api/products/:id` | Update a product (Admin) |
+| DELETE | `/api/products/:id` | Delete a product (Admin) |
+| GET | `/api/seed` | Auto-populate DB with mock e-commerce data |
 
 ---
 
 ## 🔒 Protected Routes
 
-The following routes require authentication:
+The following routes require an active session and an Admin role:
 
 - `/products/create`
 - `/products/manage`
 
-Protection is handled using **Next.js Middleware**.
+Protection is handled at the edge using `src/proxy.ts`.
 
 ---
 
 ## ⚙️ Environment Variables
 
-Create a `.env.local` file.
+Create a `.env.local` file in the root directory.
 
 ```env
-MONGODB_URI=your_mongodb_connection_string
-DATABASE_NAME=nextmart
-JWT_SECRET=your_secret_key
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/?retryWrites=true&w=majority
+DATABASE_NAME=zipbuy
+JWT_SECRET=your_super_secret_key_here
 ```
 
 ---
 
-## 📥 Installation
+## 📥 Installation & Setup
 
-Clone the repository.
+Clone the repository:
 
 ```bash
 git clone <repository-url>
 ```
 
-Navigate to the project.
+Navigate to the project directory:
 
 ```bash
-cd nextmart
+cd zipbuy
 ```
 
-Install dependencies.
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run the development server.
+Seed the Database (Optional):
+
+Start the dev server and visit `http://localhost:3000/api/seed` in your browser to instantly populate MongoDB with realistic products.
+
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open:
-
-```
-http://localhost:3000
-```
-
----
-
-## 📚 Learning Objectives
-
-This project helps you learn:
-
-- Next.js App Router
-- TypeScript Fundamentals
-- MongoDB CRUD Operations
-- RESTful API Development
-- Authentication with JWT
-- HTTP-only Cookie Sessions
-- Next.js Middleware
-- Protected Routes
-- React Context API
-- Custom Hooks
-- Server and Client Components
-- Folder Organization
-- Clean Architecture
+Visit `http://localhost:3000` to view the application.
 
 ---
 
 ## 📈 Future Improvements
 
-- Product Search
-- Category Filtering
-- Shopping Cart
-- Wishlist
-- Checkout Flow
-- Order Management
-- User Dashboard
-- Admin Dashboard
-- Image Upload
-- Pagination
-- Product Reviews
-- Payment Gateway Integration
-- Email Verification
-- Password Reset
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push your branch.
-5. Open a Pull Request.
-
----
-
-## 📄 License
-
-This project is intended for educational purposes and is open for learning, modification, and experimentation.
+- Shopping Cart & Global State Management (Zustand/Redux)
+- Wishlist functionality
+- Stripe Payment Gateway Integration
+- Checkout & Order History Flow
+- User Profile Dashboard
+- Cloudinary / AWS S3 Image Uploads
+- Product Reviews & Ratings Submissions
+- Email Verification (SendGrid / Resend)
