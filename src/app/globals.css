@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  /* --- 3-Color Primary Palette & Neutral Slate Override --- */
+  
+  /* Page background and foreground (Neutral Slate) */
+  --background: hsl(210 40% 98%);       /* Slate-50 */
+  --foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+  
+  /* Component surfaces (Neutral Slate) */
+  --card: hsl(0 0% 100%);               /* White */
+  --card-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+  --popover: hsl(0 0% 100%);            /* White */
+  --popover-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+
+  /* Deep Blue (Primary) */
+  --primary: hsl(221.2 83.2% 53.3%);    /* Vibrant Deep Blue (#2563eb) */
+  --primary-foreground: hsl(210 40% 98%); /* Slate-50 */
+
+  /* Vibrant Orange (Secondary / Accent) */
+  --secondary: hsl(24.6 95% 53.1%);     /* Vibrant Orange (#f97316) */
+  --secondary-foreground: hsl(210 40% 98%); /* Slate-50 */
+  --accent: hsl(24.6 95% 53.1%);        /* Vibrant Orange (#f97316) */
+  --accent-foreground: hsl(210 40% 98%); /* Slate-50 */
+
+  /* Slate Neutrals for Muted, Borders, and Inputs */
+  --muted: hsl(210 40% 96.1%);          /* Slate-100 */
+  --muted-foreground: hsl(215.4 16.3% 46.9%); /* Slate-500 */
+  --border: hsl(214.3 31.8% 91.4%);     /* Slate-200 */
+  --input: hsl(214.3 31.8% 91.4%);      /* Slate-200 */
+  --ring: hsl(221.2 83.2% 53.3%);       /* Deep Blue */
+
+  --radius: 0.75rem;                    /* Uniform rounded-xl (12px) */
+
+  /* Charts mapping to our 3-color palette */
+  --chart-1: hsl(221.2 83.2% 53.3%);    /* Deep Blue */
+  --chart-2: hsl(24.6 95% 53.1%);       /* Vibrant Orange */
+  --chart-3: hsl(215.4 16.3% 46.9%);     /* Neutral Slate */
+  --chart-4: hsl(215 20.2% 65.1%);
+  --chart-5: hsl(214.3 31.8% 91.4%);
+}
+
+.dark {
+  /* Dark Page Background & Foreground (Slate Dark) */
+  --background: hsl(222.2 84% 4.9%);    /* Slate-950 */
+  --foreground: hsl(210 40% 98%);       /* Slate-50 */
+  
+  /* Dark Component Surfaces (Slate Dark) */
+  --card: hsl(222.2 84% 4.9%);          /* Slate-950 */
+  --card-foreground: hsl(210 40% 98%);  /* Slate-50 */
+  --popover: hsl(222.2 84% 4.9%);       /* Slate-950 */
+  --popover-foreground: hsl(210 40% 98%); /* Slate-50 */
+
+  /* Deep Blue (Primary Dark) */
+  --primary: hsl(217.2 91.2% 59.8%);    /* Lighter Vibrant Blue for Dark Mode */
+  --primary-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+
+  /* Vibrant Orange (Secondary / Accent Dark) */
+  --secondary: hsl(24.6 95% 53.1%);     /* Vibrant Orange */
+  --secondary-foreground: hsl(210 40% 98%); /* Slate-50 */
+  --accent: hsl(24.6 95% 53.1%);        /* Vibrant Orange */
+  --accent-foreground: hsl(210 40% 98%); /* Slate-50 */
+
+  /* Slate Dark Muted, Borders, and Inputs */
+  --muted: hsl(217.2 32.6% 17.5%);      /* Slate-800 */
+  --muted-foreground: hsl(215 20.2% 65.1%); /* Slate-400 */
+  --border: hsl(217.2 32.6% 17.5%);     /* Slate-800 */
+  --input: hsl(217.2 32.6% 17.5%);      /* Slate-800 */
+  --ring: hsl(217.2 91.2% 59.8%);       /* Lighter Vibrant Blue */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Custom Color Tokens */
+  --color-deep-blue: hsl(221.2 83.2% 53.3%);
+  --color-vibrant-orange: hsl(24.6 95% 53.1%);
+  --color-neutral-slate: hsl(215.4 16.3% 46.9%);
+
+  /* Animation Utilities */
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
