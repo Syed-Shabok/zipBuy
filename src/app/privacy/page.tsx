@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldCheck, Mail, ArrowLeft } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 
 export default function PrivacyPage() {
@@ -9,7 +9,7 @@ export default function PrivacyPage() {
       <div className="mb-8">
         <Link href="/">
           <Button variant="ghost" size="sm" className="inline-flex items-center gap-2">
-            <ArrowLeft className="size-4" /> Back to Home
+            <span className="material-symbols-outlined text-[16px]">arrow_back</span> Back to Home
           </Button>
         </Link>
       </div>
@@ -21,8 +21,8 @@ export default function PrivacyPage() {
             <h1 className="text-4xl font-bold tracking-tight">Privacy Policy</h1>
             <p className="text-muted-foreground text-sm">Last updated: July 26, 2026</p>
           </div>
-          <div className="p-3 bg-primary/10 text-primary rounded-2xl w-fit">
-            <ShieldCheck className="size-10" />
+          <div className="p-3 bg-primary/10 text-primary rounded-sm w-fit flex items-center justify-center">
+            <span className="material-symbols-outlined text-[40px]">verified_user</span>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-foreground">1. Introduction</h2>
             <p>
-              Welcome to Next Mart (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our e-commerce platform and purchase products from our verified merchants.
+              Welcome to ZipBuy (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our e-commerce platform and purchase products from our verified merchants.
             </p>
             <p>
               By accessing or using our services, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms outlined here, please do not use our platform.
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-foreground">3. How We Use Your Information</h2>
             <p>
-              Next Mart uses the collected data for various essential business operations, including:
+              ZipBuy uses the collected data for various essential business operations, including:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>To facilitate transaction processing, invoice generation, and merchant routing for shipping.</li>
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
               If you have any questions or concerns regarding this Privacy Policy, please contact our privacy compliance team:
             </p>
             <div className="flex items-center gap-3 mt-4 text-foreground font-semibold">
-              <Mail className="size-5 text-primary" />
+              <span className="material-symbols-outlined text-primary text-[20px]">mail</span>
               <span>privacy@nextmart.example.com</span>
             </div>
           </section>

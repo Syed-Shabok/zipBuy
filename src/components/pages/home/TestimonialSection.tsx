@@ -11,7 +11,7 @@ export const TestimonialSection = () => {
             <h4 className="font-bold">Alice Johnson</h4>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            “Shopping on Next Mart is incredibly easy and intuitive. The interface is clean, product images look realistic, and checkout is super fast!”
+            “Shopping on ZipBuy is incredibly easy and intuitive. The interface is clean, product images look realistic, and checkout is super fast!”
           </p>
         </div>
         <div className="bg-white dark:bg-card p-6 rounded-xl shadow hover:shadow-lg transition">

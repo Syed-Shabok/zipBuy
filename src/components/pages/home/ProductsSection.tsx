@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShoppingCart, Star } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { TProduct } from "@/types/product";
 
@@ -50,7 +50,7 @@ export const FeaturedProductsSection = () => {
         <Button variant="outline">
           <Link href="/products" className="flex">
             View All
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <span className="material-symbols-outlined text-[16px] ml-2 flex items-center justify-center">arrow_forward</span>
           </Link>
         </Button>
       </div>
@@ -59,7 +59,7 @@ export const FeaturedProductsSection = () => {
         {products.slice(0, 6).map((product) => (
           <div
             key={product.id}
-            className="group overflow-hidden rounded-xl border bg-background transition-all hover:shadow-lg"
+            className="group overflow-hidden rounded-sm border border-border bg-background transition-all"
           >
             <div className="relative aspect-square overflow-hidden">
               <Image
@@ -87,13 +87,13 @@ export const FeaturedProductsSection = () => {
                 <span className="text-2xl font-bold">${product.price}</span>
 
                 <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span className="material-symbols-outlined text-[16px] text-yellow-400 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   <span className="text-sm">{product.rating}</span>
                 </div>
               </div>
               <Link href={`/products/${product.id}`}>
                 <Button className="w-full">
-                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  <span className="material-symbols-outlined text-[16px] mr-2">shopping_cart</span>
                   View Details
                 </Button>
               </Link>

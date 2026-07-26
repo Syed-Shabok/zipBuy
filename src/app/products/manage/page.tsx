@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trash2, Eye } from "lucide-react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -77,7 +77,7 @@ export default function ManageProductsPage() {
 
         <CardContent>
           {error && (
-            <div className="mb-4 p-3 text-sm text-destructive bg-destructive/10 rounded-lg">
+            <div className="mb-4 p-3 text-sm text-destructive bg-destructive/10 rounded-sm">
               {error}
             </div>
           )}
@@ -89,7 +89,7 @@ export default function ManageProductsPage() {
               </p>
             </div>
           ) : products.length === 0 ? (
-            <div className="flex h-64 flex-col items-center justify-center rounded-lg border border-dashed text-center p-6">
+            <div className="flex h-64 flex-col items-center justify-center rounded-sm border border-dashed border-border text-center p-6">
               <p className="text-muted-foreground text-lg mb-4">
                 No products found in the catalog.
               </p>
@@ -112,7 +112,7 @@ export default function ManageProductsPage() {
                 {products.map((product) => (
                   <TableRow key={product.id}>
                     <TableCell>
-                      <div className="relative h-12 w-12 overflow-hidden rounded-lg border bg-muted">
+                      <div className="relative h-12 w-12 overflow-hidden rounded-sm border bg-muted">
                         <Image
                           src={product.image}
                           alt={product.title}
@@ -135,7 +135,7 @@ export default function ManageProductsPage() {
                       <div className="flex justify-end gap-2">
                         <Link href={`/products/${product.id}`}>
                           <Button variant="outline" size="sm" className="h-8 flex items-center gap-1">
-                            <Eye className="size-3.5" />
+                            <span className="material-symbols-outlined text-[14px]">visibility</span>
                             View
                           </Button>
                         </Link>
@@ -145,7 +145,7 @@ export default function ManageProductsPage() {
                           className="h-8"
                           onClick={() => product.id && handleDelete(product.id)}
                         >
-                          <Trash2 className="size-3.5" />
+                          <span className="material-symbols-outlined text-[14px]">delete</span>
                           Delete
                         </Button>
                       </div>

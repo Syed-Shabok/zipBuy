@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ShoppingCart, Star } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -51,7 +51,7 @@ export default function ProductDetails({
   return (
     <main className="container py-16 mx-auto">
       <div className="grid gap-12 lg:grid-cols-2">
-        <div className="relative aspect-square overflow-hidden rounded-xl border">
+        <div className="relative aspect-square overflow-hidden rounded-sm border border-border">
           <Image
             src={product.image}
             alt={product.title}
@@ -68,7 +68,7 @@ export default function ProductDetails({
           <h1 className="text-4xl font-bold">{product.title}</h1>
 
           <div className="flex items-center gap-2">
-            <Star className="fill-yellow-400 text-yellow-400" />
+            <span className="material-symbols-outlined text-yellow-400 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
 
             <span>{product.rating}</span>
           </div>
@@ -83,7 +83,7 @@ export default function ProductDetails({
           </p>
 
           <Button size="lg">
-            <ShoppingCart className="mr-2 size-5" />
+            <span className="material-symbols-outlined text-[20px] mr-2">shopping_cart</span>
             Add to Cart
           </Button>
         </div>

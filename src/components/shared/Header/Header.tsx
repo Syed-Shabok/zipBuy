@@ -9,7 +9,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useAuth } from "@/hooks/useAuth";
-import { Calendar, Menu, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -23,8 +22,8 @@ export default function Header() {
     { title: "Home", url: "/" },
     { title: "Products", url: "/products" },
     { title: "About", url: "/about" },
-    ...(user ? [{ title: "Manage Product", url: "/product/manage" }] : []),
-    ...(user ? [{ title: "Create Product", url: "/product/create" }] : []),
+    ...(user ? [{ title: "Manage Product", url: "/products/manage" }] : []),
+    ...(user ? [{ title: "Create Product", url: "/products/create" }] : []),
   ];
 
   const handleNavigation = (url: string) => {
@@ -45,8 +44,8 @@ export default function Header() {
           onClick={() => handleNavigation("/")}
           className="flex items-center gap-2 font-semibold text-xl hover:opacity-80 transition-opacity"
         >
-          <ShoppingBag className="h-6 w-6" />
-          <span>Next Mart</span>
+          <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
+          <span>ZipBuy</span>
         </button>
 
         {/* Desktop Navigation */}
@@ -93,13 +92,13 @@ export default function Header() {
             className="md:hidden"
             render={<Button variant="ghost" size="icon" />}
           >
-            <Menu className="h-5 w-5" />
+            <span className="material-symbols-outlined text-[20px]">menu</span>
           </SheetTrigger>
 
           <SheetContent side="right" className="w-75">
             <SheetHeader>
               <SheetTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
+                <span className="material-symbols-outlined text-[20px]">calendar_today</span>
                 EventHub
               </SheetTitle>
             </SheetHeader>

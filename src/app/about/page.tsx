@@ -1,4 +1,3 @@
-import { Award, Package, ShieldCheck, Truck } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -8,7 +7,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="mx-auto max-w-4xl text-center">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary">
-          About Next Mart
+          About ZipBuy
         </p>
 
         <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
@@ -16,7 +15,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-          ShopNest is a modern e-commerce platform dedicated to providing
+          ZipBuy is a modern e-commerce platform dedicated to providing
           quality products, secure shopping, and an exceptional customer
           experience. Whether you&apos;re looking for the latest technology,
           fashion, or everyday essentials, we&apos;ve got you covered.
@@ -75,7 +74,7 @@ export default function AboutPage() {
         <div className="grid gap-6">
           <Card>
             <CardContent className="flex items-start gap-4 py-6">
-              <Truck className="mt-1 h-8 w-8 text-primary" />
+              <span className="material-symbols-outlined text-[32px] text-primary mt-1">local_shipping</span>
 
               <div>
                 <h3 className="font-semibold">Fast Delivery</h3>
@@ -89,7 +88,7 @@ export default function AboutPage() {
 
           <Card>
             <CardContent className="flex items-start gap-4 py-6">
-              <ShieldCheck className="mt-1 h-8 w-8 text-primary" />
+              <span className="material-symbols-outlined text-[32px] text-primary mt-1">verified_user</span>
 
               <div>
                 <h3 className="font-semibold">Secure Shopping</h3>
@@ -104,7 +103,7 @@ export default function AboutPage() {
 
           <Card>
             <CardContent className="flex items-start gap-4 py-6">
-              <Package className="mt-1 h-8 w-8 text-primary" />
+              <span className="material-symbols-outlined text-[32px] text-primary mt-1">inventory_2</span>
 
               <div>
                 <h3 className="font-semibold">Premium Products</h3>
@@ -118,7 +117,7 @@ export default function AboutPage() {
 
           <Card>
             <CardContent className="flex items-start gap-4 py-6">
-              <Award className="mt-1 h-8 w-8 text-primary" />
+              <span className="material-symbols-outlined text-[32px] text-primary mt-1">workspace_premium</span>
 
               <div>
                 <h3 className="font-semibold">Customer Satisfaction</h3>
@@ -133,8 +132,8 @@ export default function AboutPage() {
       </section>
 
       {/* Closing */}
-      <section className="mt-24 rounded-2xl bg-muted p-10 text-center">
-        <h2 className="text-3xl font-bold">Thank You for Choosing Next Mart</h2>
+      <section className="mt-24 rounded-sm bg-muted p-10 text-center">
+        <h2 className="text-3xl font-bold">Thank You for Choosing ZipBuy</h2>
 
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
           We&apos;re committed to delivering quality products, excellent

@@ -8,9 +8,9 @@ export default function LoginPage() {
         <div className="flex justify-center gap-2 md:justify-start">
           <Link href="/" className="flex items-center gap-2 font-medium">
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-              N
+              Z
             </div>
-            NextMart
+            ZipBuy
           </Link>
         </div>
 

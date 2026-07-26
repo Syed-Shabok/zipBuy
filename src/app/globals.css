@@ -3,72 +3,66 @@
 @import "shadcn/tailwind.css";
 
 :root {
-  /* --- 3-Color Primary Palette & Neutral Slate Override --- */
+  /* Page background and foreground */
+  --background: hsl(0 0% 95.7%); /* #F4F4F4 */
+  --foreground: hsl(0 0% 10.2%); /* #1A1A1A */
   
-  /* Page background and foreground (Neutral Slate) */
-  --background: hsl(210 40% 98%);       /* Slate-50 */
-  --foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
-  
-  /* Component surfaces (Neutral Slate) */
-  --card: hsl(0 0% 100%);               /* White */
-  --card-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
-  --popover: hsl(0 0% 100%);            /* White */
-  --popover-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+  /* Component surfaces */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 10.2%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 10.2%);
 
-  /* Deep Blue (Primary) */
-  --primary: hsl(221.2 83.2% 53.3%);    /* Vibrant Deep Blue (#2563eb) */
-  --primary-foreground: hsl(210 40% 98%); /* Slate-50 */
+  /* Primary: #E85D04 */
+  --primary: hsl(23 96.6% 46.3%);
+  --primary-foreground: hsl(0 0% 95.7%);
 
-  /* Vibrant Orange (Secondary / Accent) */
-  --secondary: hsl(24.6 95% 53.1%);     /* Vibrant Orange (#f97316) */
-  --secondary-foreground: hsl(210 40% 98%); /* Slate-50 */
-  --accent: hsl(24.6 95% 53.1%);        /* Vibrant Orange (#f97316) */
-  --accent-foreground: hsl(210 40% 98%); /* Slate-50 */
+  /* Secondary: #1A1A1A */
+  --secondary: hsl(0 0% 10.2%);
+  --secondary-foreground: hsl(0 0% 95.7%);
 
-  /* Slate Neutrals for Muted, Borders, and Inputs */
-  --muted: hsl(210 40% 96.1%);          /* Slate-100 */
-  --muted-foreground: hsl(215.4 16.3% 46.9%); /* Slate-500 */
-  --border: hsl(214.3 31.8% 91.4%);     /* Slate-200 */
-  --input: hsl(214.3 31.8% 91.4%);      /* Slate-200 */
-  --ring: hsl(221.2 83.2% 53.3%);       /* Deep Blue */
+  /* Accent: #F4F4F4 */
+  --accent: hsl(0 0% 95.7%);
+  --accent-foreground: hsl(0 0% 10.2%);
 
-  --radius: 0.75rem;                    /* Uniform rounded-xl (12px) */
+  /* Borders, Input, Muted: #666666 */
+  --border: hsl(0 0% 40%);
+  --input: hsl(0 0% 40%);
+  --ring: hsl(23 96.6% 46.3%);
 
-  /* Charts mapping to our 3-color palette */
-  --chart-1: hsl(221.2 83.2% 53.3%);    /* Deep Blue */
-  --chart-2: hsl(24.6 95% 53.1%);       /* Vibrant Orange */
-  --chart-3: hsl(215.4 16.3% 46.9%);     /* Neutral Slate */
-  --chart-4: hsl(215 20.2% 65.1%);
-  --chart-5: hsl(214.3 31.8% 91.4%);
+  /* Sharp border radius: 0.125rem (2px) */
+  --radius: 0.125rem;
+
+  --chart-1: hsl(23 96.6% 46.3%);
+  --chart-2: hsl(0 0% 10.2%);
+  --chart-3: hsl(0 0% 40%);
+  --chart-4: hsl(0 0% 95.7%);
+  --chart-5: hsl(0 0% 100%);
 }
 
 .dark {
-  /* Dark Page Background & Foreground (Slate Dark) */
-  --background: hsl(222.2 84% 4.9%);    /* Slate-950 */
-  --foreground: hsl(210 40% 98%);       /* Slate-50 */
+  /* Dark Page Background & Foreground */
+  --background: hsl(0 0% 10.2%); /* #1A1A1A */
+  --foreground: hsl(0 0% 95.7%); /* #F4F4F4 */
   
-  /* Dark Component Surfaces (Slate Dark) */
-  --card: hsl(222.2 84% 4.9%);          /* Slate-950 */
-  --card-foreground: hsl(210 40% 98%);  /* Slate-50 */
-  --popover: hsl(222.2 84% 4.9%);       /* Slate-950 */
-  --popover-foreground: hsl(210 40% 98%); /* Slate-50 */
+  /* Dark Component Surfaces */
+  --card: hsl(0 0% 13%);
+  --card-foreground: hsl(0 0% 95.7%);
+  --popover: hsl(0 0% 13%);
+  --popover-foreground: hsl(0 0% 95.7%);
 
-  /* Deep Blue (Primary Dark) */
-  --primary: hsl(217.2 91.2% 59.8%);    /* Lighter Vibrant Blue for Dark Mode */
-  --primary-foreground: hsl(222.2 47.4% 11.2%); /* Slate-900 */
+  /* Primary */
+  --primary: hsl(23 96.6% 46.3%);
+  --primary-foreground: hsl(0 0% 10.2%);
 
-  /* Vibrant Orange (Secondary / Accent Dark) */
-  --secondary: hsl(24.6 95% 53.1%);     /* Vibrant Orange */
-  --secondary-foreground: hsl(210 40% 98%); /* Slate-50 */
-  --accent: hsl(24.6 95% 53.1%);        /* Vibrant Orange */
-  --accent-foreground: hsl(210 40% 98%); /* Slate-50 */
+  --secondary: hsl(0 0% 20%);
+  --secondary-foreground: hsl(0 0% 95.7%);
+  --accent: hsl(23 96.6% 46.3%);
+  --accent-foreground: hsl(0 0% 10.2%);
 
-  /* Slate Dark Muted, Borders, and Inputs */
-  --muted: hsl(217.2 32.6% 17.5%);      /* Slate-800 */
-  --muted-foreground: hsl(215 20.2% 65.1%); /* Slate-400 */
-  --border: hsl(217.2 32.6% 17.5%);     /* Slate-800 */
-  --input: hsl(217.2 32.6% 17.5%);      /* Slate-800 */
-  --ring: hsl(217.2 91.2% 59.8%);       /* Lighter Vibrant Blue */
+  --border: hsl(0 0% 40%);
+  --input: hsl(0 0% 40%);
+  --ring: hsl(23 96.6% 46.3%);
 }
 
 @theme {
@@ -90,6 +84,27 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* Fonts Configuration for Tailwind v4 */
+  --font-sans: var(--font-work-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-display: var(--font-plus-jakarta), sans-serif;
+
+  /* Sharp radii overrides */
+  --radius-xl: 0.25rem;
+  --radius-lg: 0.125rem;
+  --radius-md: 0.125rem;
+  --radius-sm: 0.125rem;
+  --radius: 0.125rem;
+
+  /* Flat design shadows override (removing all heavy drop shadows) */
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-inner: none;
+
   /* Custom Color Tokens */
   --color-deep-blue: hsl(221.2 83.2% 53.3%);
   --color-vibrant-orange: hsl(24.6 95% 53.1%);
@@ -109,3 +124,18 @@
     }
   }
 }
+
+/* Global Typography & Base Overrides */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+body, button, input, textarea, select, label {
+  font-family: var(--font-work-sans), sans-serif;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+

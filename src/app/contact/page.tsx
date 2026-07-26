@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,7 +49,7 @@ export default function ContactPage() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {status === "success" && (
-                  <div className="p-4 text-sm text-green-700 bg-green-50 dark:bg-green-950/20 dark:text-green-400 rounded-xl border border-green-200 dark:border-green-900/50">
+                  <div className="p-4 text-sm text-green-700 bg-green-50 dark:bg-green-950/20 dark:text-green-400 rounded-sm border border-green-200 dark:border-green-900/50">
                     Thank you! Your message has been sent successfully. We will get back to you shortly.
                   </div>
                 )}
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 </div>
 
                 <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={loading}>
-                  <Send className="size-4" />
+                  <span className="material-symbols-outlined text-[16px]">send</span>
                   {loading ? "Sending..." : "Submit Message"}
                 </Button>
               </form>
@@ -105,8 +105,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
-                  <Mail className="size-5" />
+                <div className="p-2.5 bg-primary/10 text-primary rounded-sm shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[20px]">mail</span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm">Email Address</h4>
@@ -116,8 +116,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-secondary/10 text-secondary rounded-xl shrink-0">
-                  <Phone className="size-5" />
+                <div className="p-2.5 bg-secondary/10 text-secondary rounded-sm shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[20px]">phone</span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm">Phone Line</h4>
@@ -127,13 +127,13 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
-                  <MapPin className="size-5" />
+                <div className="p-2.5 bg-primary/10 text-primary rounded-sm shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[20px]">location_on</span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm">Corporate HQ</h4>
                   <p className="text-xs text-muted-foreground mt-1">
-                    Next Mart Inc.<br />
+                    ZipBuy Inc.<br />
                     100 Innovation Parkway, Suite 500<br />
                     San Francisco, CA 94107
                   </p>
@@ -141,8 +141,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4 border-t pt-6">
-                <div className="p-2.5 bg-muted text-foreground rounded-xl shrink-0">
-                  <Clock className="size-5" />
+                <div className="p-2.5 bg-muted text-foreground rounded-sm shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[20px]">schedule</span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm">Working Hours</h4>

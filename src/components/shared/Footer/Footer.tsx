@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { MessageCircle, MessageCircleCode, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 const footerSections = [
@@ -51,8 +50,8 @@ export default function Footer() {
             <div className="col-span-full xl:col-span-2">
               {/* Logo */}
               <button className="flex items-center gap-2 font-semibold text-xl hover:opacity-80 transition-opacity">
-                <ShoppingBag className="h-6 w-6" />
-                <span>Next Mart</span>
+                <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
+                <span>ZipBuy</span>
               </button>
 
               <p className="mt-4 text-muted-foreground">
@@ -104,10 +103,10 @@ export default function Footer() {
 
             <div className="flex items-center gap-5 text-muted-foreground">
               <Link href="#" target="_blank">
-                <MessageCircleCode className="h-5 w-5" />
+                <span className="material-symbols-outlined text-[20px]">code</span>
               </Link>
               <Link href="#" target="_blank">
-                <MessageCircle className="h-5 w-5" />
+                <span className="material-symbols-outlined text-[20px]">chat_bubble</span>
               </Link>
             </div>
           </div>
