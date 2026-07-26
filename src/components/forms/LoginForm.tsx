@@ -48,6 +48,12 @@ export function LoginForm() {
     await loginUser("admin@example.com", "password123");
   }
 
+  async function handleUserLogin() {
+    setEmail("user@example.com");
+    setPassword("password123");
+    await loginUser("user@example.com", "password123");
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-6">
@@ -101,7 +107,15 @@ export function LoginForm() {
             className="w-full"
             onClick={handleDemoLogin}
           >
-            Demo Login
+            Demo Admin Login
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full"
+            onClick={handleUserLogin}
+          >
+            Demo User Login
           </Button>
         </div>
 

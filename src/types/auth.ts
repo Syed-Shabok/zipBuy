@@ -6,3 +6,9 @@ export interface TAuthContext {
   setUser: React.Dispatch<React.SetStateAction<TUser | null>>;
   logout: () => Promise<void>;
 }
+
+export interface TDecodedToken {
+  id: string;
+  email: string;
+  role: string;
+}

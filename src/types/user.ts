@@ -1,5 +1,7 @@
 export interface TUser {
-  userId: string;
+  id?: string;
+  userId?: string;
+  name?: string;
   email: string;
   role: string;
 }

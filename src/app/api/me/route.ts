@@ -14,6 +14,7 @@ export async function GET() {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
       id: string;
+      role?: string;
     };
 
     const { db } = await mongoConnect();
@@ -30,6 +31,7 @@ export async function GET() {
       id: user._id.toString(),
       name: user.name,
       email: user.email,
+      role: user.role || decoded.role || "user",
     });
   } catch {
     return NextResponse.json(null);
